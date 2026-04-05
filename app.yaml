@@ -5,14 +5,18 @@ metadata:
   namespace: argocd
 spec:
   project: default
+
   source:
     repoURL: https://github.com/leonantivo/argocd-test.git
     targetRevision: HEAD
     path: dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: my-springbootapp-argocd
   syncPolicy:
+    synctOptions: 
+      - CreateNamespace=true
+
     automated:
       prune: true
       selfHeal: true
