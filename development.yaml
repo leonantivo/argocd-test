@@ -24,7 +24,7 @@ metadata:
   name: java-argocd-service
 spec:
   selector:
-    app: my-app
+    app:  my-app-argocd
   ports:
     - protocol: TCP
       port: 9090
