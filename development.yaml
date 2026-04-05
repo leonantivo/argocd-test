@@ -10,11 +10,11 @@ spec:
   template:
     metadata:
       labels:
-        app: my-app
+        app: my-app-argocd
     spec:
       containers:
         - name: argocd
-          image: docker pull 192.168.56.1:5000/my-java-argo-test:v1
+          image: 192.168.56.1:5000/my-java-argo-test:v1
           ports:
             - containerPort: 8080
 
