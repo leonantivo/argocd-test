@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: argocd
-          image: 192.168.56.1:5000/my-java-argo-test:v1
+          image: localhost:5000/my_java_app:v1
           ports:
             - containerPort: 8080
 

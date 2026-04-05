@@ -10,11 +10,13 @@ spec:
     repoURL: https://github.com/leonantivo/argocd-test.git
     targetRevision: HEAD
     path: dev
+
   destination:
     server: https://kubernetes.default.svc
     namespace: my-springbootapp-argocd
+  
   syncPolicy:
-    synctOptions: 
+    syncOptions: 
       - CreateNamespace=true
 
     automated:
