@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-argocd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app-argocd
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: argocd
+          image: docker pull 192.168.56.1:5000/my-java-argo-test:v1
+          ports:
+            - containerPort: 8080
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-argocd-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 9090
+      targetPort: 8080
+  type: ClusterIP
